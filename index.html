@@ -8,13 +8,25 @@
 </head>
 <body>
     <div class="video-background">
-        <video autoplay muted loop>
+        <video id="background-video" autoplay loop>
             <source src="https://github.com/Nicsbot12/GROUP-2-TVL/raw/refs/heads/main/ssstik.io_@chickenyana_1731462126995.mp4" type="video/mp4">
         </video>
+        <button id="play-sound">Play with Sound</button>
     </div>
     <div class="content">
         <h1>Welcome to My Website</h1>
         <p>This is a modern website with a video background.</p>
     </div>
+    
+    <script>
+        const video = document.getElementById('background-video');
+        const playButton = document.getElementById('play-sound');
+
+        playButton.addEventListener('click', () => {
+            video.muted = false; // Unmute the video
+            video.play();
+            playButton.style.display = 'none'; // Hide the button after playing with sound
+        });
+    </script>
 </body>
 </html>
